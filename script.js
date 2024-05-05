@@ -45,7 +45,7 @@ let rightPieces
 let leftNode
 let leftPieces
 let medNode
-let medPieces 
+let medPieces
 let midNode
 let midPieces
 let bottomNode
@@ -66,7 +66,7 @@ function atualizarPeças() {
     rightPieces = Array.prototype.slice.call(rightNode);
 
     leftNode = document.querySelectorAll('.b3,.b6,.b9')
-    leftPieces = Array.prototype.slice.call(leftNode); 
+    leftPieces = Array.prototype.slice.call(leftNode);
 
     midNode = document.querySelectorAll('.b2,.b5,.b8')
     midPieces = Array.prototype.slice.call(midNode);
@@ -80,7 +80,7 @@ function atualizarPeças() {
 atualizarPeças()
 
 let UPleftDirection = [{ position: 'front', block: 'b1' }, { position: 'front', block: 'b2' }, { position: 'front', block: 'b3' }, { position: 'center', block: 'b3' }, { position: 'back', block: 'b3' }, { position: 'back', block: 'b2' }, { position: 'back', block: 'b1' }, { position: 'center', block: 'b1' }]
-let UPrightDirection = UPleftDirection.slice().reverse(); 
+let UPrightDirection = UPleftDirection.slice().reverse();
 
 let MEDleftDirection = [{ position: 'front', block: 'b4' }, { position: 'front', block: 'b5' }, { position: 'front', block: 'b6' }, { position: 'center', block: 'b6' }, { position: 'back', block: 'b6' }, { position: 'back', block: 'b5' }, { position: 'back', block: 'b4' }, { position: 'center', block: 'b4' }]
 let MEDrightDirection = MEDleftDirection.slice().reverse();
@@ -100,10 +100,10 @@ let LEFTdownDirection = LEFTupDirection.slice().reverse();
 let BACKclockwiseDirection = [{ position: 'back', block: 'b1' }, { position: 'back', block: 'b2' }, { position: 'back', block: 'b3' }, { position: 'back', block: 'b6' }, { position: 'back', block: 'b9' }, { position: 'back', block: 'b8' }, { position: 'back', block: 'b7' }, { position: 'back', block: 'b4' }];
 let BACKanticlockwiseDirection = BACKclockwiseDirection.slice().reverse();
 
-let CENTERclockwiseDirection = [{ position: 'center', block: 'b1' },{ position: 'center', block: 'b2'} ,{ position: 'center', block: 'b3'} ,{ position: 'center', block: 'b6' },{ position: 'center', block: 'b9' },{ position: 'center', block: 'b8' },{ position: 'center', block: 'b7' },{ position: 'center', block: 'b4' }];
+let CENTERclockwiseDirection = [{ position: 'center', block: 'b1' }, { position: 'center', block: 'b2' }, { position: 'center', block: 'b3' }, { position: 'center', block: 'b6' }, { position: 'center', block: 'b9' }, { position: 'center', block: 'b8' }, { position: 'center', block: 'b7' }, { position: 'center', block: 'b4' }];
 let CENTERanticlockwiseDirection = CENTERclockwiseDirection.slice().reverse();
 
-let MIDupDirection = [{ position: 'front', block: 'b2' },{ position: 'center', block: 'b2' },{ position: 'back', block: 'b2' },{ position: 'back', block: 'b5' },{ position: 'back', block: 'b8' },{ position: 'center', block: 'b8' },{ position: 'front', block: 'b8' },{ position: 'front', block: 'b5' }];
+let MIDupDirection = [{ position: 'front', block: 'b2' }, { position: 'center', block: 'b2' }, { position: 'back', block: 'b2' }, { position: 'back', block: 'b5' }, { position: 'back', block: 'b8' }, { position: 'center', block: 'b8' }, { position: 'front', block: 'b8' }, { position: 'front', block: 'b5' }];
 let MIDdownDirection = MIDupDirection.slice().reverse()
 
 let pieceTopDirection = ["front", "top", "back", "bottom", "front", "left", "left", "right", "right"]
@@ -339,8 +339,8 @@ function rotateBLOCK(blockArray, blockDirection, pieceRotate, pieceAxi, center) 
 }
 function leftRotation(position) {
     switch (position) {
-        case "up": rotateBLOCK(upPieces, UPleftDirection, "left", "EixoContrario(piece.EixoY)", "block center b2"); atualizarPeças(); break; 
-        case "med": rotateBLOCK(medPieces, MEDleftDirection, "left", "EixoContrario(piece.EixoY)", "block center b5"); atualizarPeças(); break; 
+        case "up": rotateBLOCK(upPieces, UPleftDirection, "left", "EixoContrario(piece.EixoY)", "block center b2"); atualizarPeças(); break;
+        case "med": rotateBLOCK(medPieces, MEDleftDirection, "left", "EixoContrario(piece.EixoY)", "block center b5"); atualizarPeças(); break;
         case "bottom": rotateBLOCK(bottomPieces, BOTTOMleftDirection, "left", "EixoContrario(piece.EixoY)", "block center b8"); atualizarPeças(); break;
     }
 }
@@ -348,8 +348,8 @@ function leftRotation(position) {
 
 function rightRotation(position) {
     switch (position) {
-        case "up": rotateBLOCK(upPieces, UPrightDirection, "left", "piece.EixoY", "block center b2"); atualizarPeças(); break; 
-        case "med": rotateBLOCK(medPieces, MEDrightDirection, "left", "piece.EixoY", "block center b5"); atualizarPeças(); break; 
+        case "up": rotateBLOCK(upPieces, UPrightDirection, "left", "piece.EixoY", "block center b2"); atualizarPeças(); break;
+        case "med": rotateBLOCK(medPieces, MEDrightDirection, "left", "piece.EixoY", "block center b5"); atualizarPeças(); break;
         case "bottom": rotateBLOCK(bottomPieces, BOTTOMrightDirection, "left", "piece.EixoY", "block center b8"); atualizarPeças(); break;
     }
 }
@@ -357,29 +357,29 @@ function rightRotation(position) {
 
 function topRotation(position) {
     switch (position) {
-        case "right": rotateBLOCK(rightPieces, RIGHTupDirection, "top", "piece.EixoX", "block center b4"); atualizarPeças(); break; 
-        case "center": rotateBLOCK(midPieces, MIDupDirection, "top", "piece.EixoX", "block center b5"); atualizarPeças(); break; 
-        case "left": rotateBLOCK(leftPieces, LEFTupDirection, "top", "piece.EixoX", "block center b6"); atualizarPeças(); break; 
+        case "right": rotateBLOCK(rightPieces, RIGHTupDirection, "top", "piece.EixoX", "block center b4"); atualizarPeças(); break;
+        case "center": rotateBLOCK(midPieces, MIDupDirection, "top", "piece.EixoX", "block center b5"); atualizarPeças(); break;
+        case "left": rotateBLOCK(leftPieces, LEFTupDirection, "top", "piece.EixoX", "block center b6"); atualizarPeças(); break;
     }
 }
 function downRotation(position) {
     switch (position) {
-        case "right": rotateBLOCK(rightPieces, RIGHTbottomDirection, "top", "EixoContrario(piece.EixoX)", "block center b4"); atualizarPeças(); break; 
-        case "center": rotateBLOCK(midPieces, MIDdownDirection, "top", "EixoContrario(piece.EixoX)", "block center b5"); atualizarPeças(); break; 
-        case "left": rotateBLOCK(leftPieces, LEFTdownDirection, "top", "EixoContrario(piece.EixoX)", "block center b6"); atualizarPeças(); break; 
+        case "right": rotateBLOCK(rightPieces, RIGHTbottomDirection, "top", "EixoContrario(piece.EixoX)", "block center b4"); atualizarPeças(); break;
+        case "center": rotateBLOCK(midPieces, MIDdownDirection, "top", "EixoContrario(piece.EixoX)", "block center b5"); atualizarPeças(); break;
+        case "left": rotateBLOCK(leftPieces, LEFTdownDirection, "top", "EixoContrario(piece.EixoX)", "block center b6"); atualizarPeças(); break;
     }
 }
 function ClockwiseRotation(position) {
     switch (position) {
         case "front": rotateBLOCK(frontPieces, FRONTclockwiseDirection, "clockwise", "piece.EixoZ", "block front b5"); atualizarPeças(); break;
-        case "back": rotateBLOCK(backPieces, BACKclockwiseDirection, "clockwise", "piece.EixoZ", "block back b5"); atualizarPeças(); break; 
+        case "back": rotateBLOCK(backPieces, BACKclockwiseDirection, "clockwise", "piece.EixoZ", "block back b5"); atualizarPeças(); break;
         case "center": rotateBLOCK(centerPieces, CENTERclockwiseDirection, "clockwise", "piece.EixoZ", "block center b5"); atualizarPeças(); break;
     }
-} 
+}
 function AntiClockwiseRotation(position) {
     switch (position) {
         case "front": rotateBLOCK(frontPieces, FRONTanticlockwiseDirection, "clockwise", "EixoContrario(piece.EixoZ)", "block front b5"); atualizarPeças(); break;
-        case "back": rotateBLOCK(backPieces, BACKanticlockwiseDirection, "clockwise", "EixoContrario(piece.EixoZ)", "block back b5"); atualizarPeças(); break; 
+        case "back": rotateBLOCK(backPieces, BACKanticlockwiseDirection, "clockwise", "EixoContrario(piece.EixoZ)", "block back b5"); atualizarPeças(); break;
         case "center": rotateBLOCK(centerPieces, CENTERanticlockwiseDirection, "clockwise", "EixoContrario(piece.EixoZ)", "block center b5"); atualizarPeças(); break;
     }
 }
@@ -623,29 +623,31 @@ function findRotation(piece, x, y, z, nextTransform) {
 let isMouseDown2 = false;
 let canExec = true
 RotatorButtons.forEach(button => {
-
+    button.isPressed = false
     button.addEventListener('mousedown', () => {
         isMouseDown2 = true;
         document.documentElement.style.setProperty('--cursorRotator', 'grabbing')
+        button.isPressed = true
     });
     document.documentElement.addEventListener('mouseup', () => {
         isMouseDown2 = false
         document.documentElement.style.setProperty('--cursorRotator', 'grab')
+        button.isPressed = false
     })
 })
 
 let upButtons = document.querySelectorAll('.DirectionUP')
-let downButtons = document.querySelectorAll('.DirectionDOWN') 
-let leftButtons = document.querySelectorAll(".DirectionLEFT") 
+let downButtons = document.querySelectorAll('.DirectionDOWN')
+let leftButtons = document.querySelectorAll(".DirectionLEFT")
 let rightButtons = document.querySelectorAll(".DirectionRIGHT")
 
 
 upButtons.forEach((button) => {
-    button.addEventListener("mouseenter", (e) => { 
+    button.addEventListener("mouseenter", (e) => {
         console.log("up")
-        if (isMouseDown2 && canExec) {
+        if (isMouseDown2 && canExec && e.target.parentElement.isPressed) {
             e.target.parentElement.up();
-            canExec = false; 
+            canExec = false;
             isMouseDown2 = false
             setTimeout(() => { canExec = true; }, 300);
         }
@@ -654,9 +656,9 @@ upButtons.forEach((button) => {
 
 downButtons.forEach((button) => {
     button.addEventListener("mouseenter", (e) => {
-        if (isMouseDown2 && canExec) {
+        if (isMouseDown2 && canExec && e.target.parentElement.isPressed) {
             e.target.parentElement.down();
-            canExec = false; 
+            canExec = false;
             isMouseDown2 = false
             setTimeout(() => { canExec = true; }, 300);
         }
@@ -665,9 +667,9 @@ downButtons.forEach((button) => {
 
 leftButtons.forEach((button) => {
     button.addEventListener("mouseenter", (e) => {
-        if (isMouseDown2 && canExec) {
+        if (isMouseDown2 && canExec && e.target.parentElement.isPressed) {
             e.target.parentElement.left();
-            canExec = false; 
+            canExec = false;
             isMouseDown2 = false
             setTimeout(() => { canExec = true; }, 300);
         }
@@ -676,9 +678,9 @@ leftButtons.forEach((button) => {
 
 rightButtons.forEach((button) => {
     button.addEventListener("mouseenter", (e) => {
-        if (isMouseDown2 && canExec) {
+        if (isMouseDown2 && canExec && e.target.parentElement.isPressed) {
             e.target.parentElement.right();
-            canExec = false; 
+            canExec = false;
             isMouseDown2 = false
             setTimeout(() => { canExec = true; }, 300);
         }
@@ -686,75 +688,75 @@ rightButtons.forEach((button) => {
 });
 
 
-let rightFaces = document.querySelectorAll(".rightFront,.rightTop,.rightBack,.rightDown")  
-let midFaces = document.querySelectorAll(".midFront,.midTop,.midBack,.midDown") 
-let leftFaces = document.querySelectorAll(".leftFront,.leftTop,.leftBack,.leftDown")  
+let rightFaces = document.querySelectorAll(".rightFront,.rightTop,.rightBack,.rightDown")
+let midFaces = document.querySelectorAll(".midFront,.midTop,.midBack,.midDown")
+let leftFaces = document.querySelectorAll(".leftFront,.leftTop,.leftBack,.leftDown")
 
-let upFaces = document.querySelectorAll(".upFront,.upBack,.upLeft,.upRight") 
+let upFaces = document.querySelectorAll(".upFront,.upBack,.upLeft,.upRight")
 let medFaces = document.querySelectorAll(".medFront,.medBack,.medLeft,.medRight")
 let bottomFaces = document.querySelectorAll(".bottomFront,.bottomBack,.bottomLeft,.bottomRight")
 
-let rightFrontFaces = document.querySelectorAll(".rotateRight.leftRight")  
-let rightCenterFaces = document.querySelectorAll(".rotateRight.midRight") 
-let rightBackFaces = document.querySelectorAll(".rotateRight.rightRight") 
+let rightFrontFaces = document.querySelectorAll(".rotateRight.leftRight")
+let rightCenterFaces = document.querySelectorAll(".rotateRight.midRight")
+let rightBackFaces = document.querySelectorAll(".rotateRight.rightRight")
 
-let topFrontFaces = document.querySelectorAll(".bottomTop") 
-let topBackFaces = document.querySelectorAll(".upTop") 
-let topCenterFaces = document.querySelectorAll(".medTop") 
+let topFrontFaces = document.querySelectorAll(".bottomTop")
+let topBackFaces = document.querySelectorAll(".upTop")
+let topCenterFaces = document.querySelectorAll(".medTop")
 
-let leftBackFaces = document.querySelectorAll(".leftLeft")  
-let leftCenterFaces = document.querySelectorAll(".midLeft") 
-let leftFrontFaces = document.querySelectorAll(".rightLeft") 
+let leftBackFaces = document.querySelectorAll(".leftLeft")
+let leftCenterFaces = document.querySelectorAll(".midLeft")
+let leftFrontFaces = document.querySelectorAll(".rightLeft")
 
-let downBackFaces = document.querySelectorAll(".bottomDown") 
-let downFrontFaces = document.querySelectorAll(".upDown") 
-let downCenterFaces = document.querySelectorAll(".medDown") 
+let downBackFaces = document.querySelectorAll(".bottomDown")
+let downFrontFaces = document.querySelectorAll(".upDown")
+let downCenterFaces = document.querySelectorAll(".medDown")
 
 
 
 
 rightFaces.forEach(button => button.up = () => { topRotation('right') })
-rightFaces.forEach(button => button.down = () => { downRotation('right') })  
+rightFaces.forEach(button => button.down = () => { downRotation('right') })
 
 midFaces.forEach(button => button.up = () => { topRotation('center') })
-midFaces.forEach(button => button.down = () => { downRotation('center') }) 
+midFaces.forEach(button => button.down = () => { downRotation('center') })
 
 leftFaces.forEach(button => button.up = () => { topRotation('left') })
-leftFaces.forEach(button => button.down = () => { downRotation('left') }) 
+leftFaces.forEach(button => button.down = () => { downRotation('left') })
 
-upFaces.forEach(button => button.left = () => { leftRotation('up') }) 
-upFaces.forEach(button => button.right = () => { rightRotation('up') }) 
+upFaces.forEach(button => button.left = () => { leftRotation('up') })
+upFaces.forEach(button => button.right = () => { rightRotation('up') })
 
-medFaces.forEach(button => button.left = () => { leftRotation('med') })  
-medFaces.forEach(button => button.right = () => { rightRotation('med') }) 
+medFaces.forEach(button => button.left = () => { leftRotation('med') })
+medFaces.forEach(button => button.right = () => { rightRotation('med') })
 
-bottomFaces.forEach(button => button.left = () => { leftRotation('bottom') })  
-bottomFaces.forEach(button => button.right = () => { rightRotation('bottom') }) 
+bottomFaces.forEach(button => button.left = () => { leftRotation('bottom') })
+bottomFaces.forEach(button => button.right = () => { rightRotation('bottom') })
 
-rightFrontFaces.forEach(button => button.up = () => { ClockwiseRotation('front') }) 
-rightFrontFaces.forEach(button => button.down = () => { AntiClockwiseRotation('front') })  
-rightCenterFaces.forEach(button => button.up = () => { ClockwiseRotation('center') }) 
-rightCenterFaces.forEach(button => button.down = () => { AntiClockwiseRotation('center') }) 
-rightBackFaces.forEach(button => button.up = () => { ClockwiseRotation('back') }) 
-rightBackFaces.forEach(button => button.down = () => { AntiClockwiseRotation('back') }) 
+rightFrontFaces.forEach(button => button.up = () => { ClockwiseRotation('front') })
+rightFrontFaces.forEach(button => button.down = () => { AntiClockwiseRotation('front') })
+rightCenterFaces.forEach(button => button.up = () => { ClockwiseRotation('center') })
+rightCenterFaces.forEach(button => button.down = () => { AntiClockwiseRotation('center') })
+rightBackFaces.forEach(button => button.up = () => { ClockwiseRotation('back') })
+rightBackFaces.forEach(button => button.down = () => { AntiClockwiseRotation('back') })
 
-topFrontFaces.forEach(button => button.left = () => { ClockwiseRotation('front') }) 
-topFrontFaces.forEach(button => button.right = () => { AntiClockwiseRotation('front') }) 
-topBackFaces.forEach(button => button.left = () => { ClockwiseRotation('back') }) 
-topBackFaces.forEach(button => button.right = () => { AntiClockwiseRotation('back') }) 
-topCenterFaces.forEach(button => button.left = () => { ClockwiseRotation('center') }) 
-topCenterFaces.forEach(button => button.right = () => { AntiClockwiseRotation('center') }) 
+topFrontFaces.forEach(button => button.left = () => { ClockwiseRotation('front') })
+topFrontFaces.forEach(button => button.right = () => { AntiClockwiseRotation('front') })
+topBackFaces.forEach(button => button.left = () => { ClockwiseRotation('back') })
+topBackFaces.forEach(button => button.right = () => { AntiClockwiseRotation('back') })
+topCenterFaces.forEach(button => button.left = () => { ClockwiseRotation('center') })
+topCenterFaces.forEach(button => button.right = () => { AntiClockwiseRotation('center') })
 
-leftFrontFaces.forEach(button => button.up = () => { ClockwiseRotation('front') }) 
-leftFrontFaces.forEach(button => button.down = () => { AntiClockwiseRotation('front') })  
-leftCenterFaces.forEach(button => button.up = () => { ClockwiseRotation('center') }) 
-leftCenterFaces.forEach(button => button.down = () => { AntiClockwiseRotation('center') }) 
-leftBackFaces.forEach(button => button.up = () => { ClockwiseRotation('back') }) 
-leftBackFaces.forEach(button => button.down = () => { AntiClockwiseRotation('back') }) 
+leftFrontFaces.forEach(button => button.up = () => { ClockwiseRotation('front') })
+leftFrontFaces.forEach(button => button.down = () => { AntiClockwiseRotation('front') })
+leftCenterFaces.forEach(button => button.up = () => { ClockwiseRotation('center') })
+leftCenterFaces.forEach(button => button.down = () => { AntiClockwiseRotation('center') })
+leftBackFaces.forEach(button => button.up = () => { ClockwiseRotation('back') })
+leftBackFaces.forEach(button => button.down = () => { AntiClockwiseRotation('back') })
 
-downFrontFaces.forEach(button => button.right = () => { ClockwiseRotation('front') }) 
-downFrontFaces.forEach(button => button.left = () => { AntiClockwiseRotation('front') }) 
-downBackFaces.forEach(button => button.right = () => { ClockwiseRotation('back') }) 
-downBackFaces.forEach(button => button.left = () => { AntiClockwiseRotation('back') }) 
-downCenterFaces.forEach(button => button.right = () => { ClockwiseRotation('center') }) 
+downFrontFaces.forEach(button => button.right = () => { ClockwiseRotation('front') })
+downFrontFaces.forEach(button => button.left = () => { AntiClockwiseRotation('front') })
+downBackFaces.forEach(button => button.right = () => { ClockwiseRotation('back') })
+downBackFaces.forEach(button => button.left = () => { AntiClockwiseRotation('back') })
+downCenterFaces.forEach(button => button.right = () => { ClockwiseRotation('center') })
 downCenterFaces.forEach(button => button.left = () => { AntiClockwiseRotation('center') }) 
