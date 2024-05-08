@@ -617,7 +617,7 @@ function findRotation(piece, x, y, z, nextTransform) {
     piece.style.transform = finalTransform(piece, 0, 0, 0, preXindex * 90, preYindex * 90, preZindex * 90)
     piece.style.transition = 'transform 0.7s cubic-bezier(.61,-0.39,.28,1.31)'
     // console.log(cortarRotation(nextTransform) + " " + finalTransform(piece, 0, 0, 0, piece.Xindex * 90, 0, 0))
-    setTimeout(() => { piece.style.transform = cortarRotation(nextTransform) + finalTransform(piece, 0, 0, 0, piece.Xindex * 90, piece.Yindex * 90, piece.Zindex * 90) }, 60)
+    setTimeout(() => { piece.style.transform = cortarRotation(nextTransform) + finalTransform(piece, 0, 0, 0, piece.Xindex * 90, piece.Yindex * 90, piece.Zindex * 90) }, 260)
 
 }
 let isMouseDown2 = false;
